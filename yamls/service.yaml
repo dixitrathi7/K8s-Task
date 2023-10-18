@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: bluegreenservice
+spec:
+ type: NodePort
+ ports:
+ - targetPort: 8080
+   port: 8080
+   nodePort: 30081
+ selector:
+  app: myapp # any custom name
+  version: blue
